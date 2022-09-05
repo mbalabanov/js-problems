@@ -10,20 +10,20 @@ function findLargestProduct(numberChain) {
             if (NUMBER_CHAIN[currentNum + iterator] > 0) {
                 CURRENT_FOUR.push(NUMBER_CHAIN[currentNum + iterator])
             }
+            ALL_PRODUCTS.push(productOfFour(CURRENT_FOUR))
         }
-
-        let currentProduct = 1
-
-        for (const CURRENT of CURRENT_FOUR) {
-            currentProduct = currentProduct * CURRENT
-        }
-
-        ALL_PRODUCTS.push(currentProduct)
     }
-    const PRODUCTS_SORTED_DESCENDING = ALL_PRODUCTS.sort(function(a, b){return b-a});
-    const TOP_THRITEEN_PRODUCTS = PRODUCTS_SORTED_DESCENDING.slice(0, 13); 
 
-    return TOP_THRITEEN_PRODUCTS
+    return ALL_PRODUCTS.sort(function(a, b){return b-a}).slice(0, 13);
+}
+
+function productOfFour(fourNumbers) {
+    let currentProduct = 1
+    for (const CURRENT of fourNumbers) {
+        currentProduct = currentProduct * CURRENT
+    }
+
+    return currentProduct
 }
 
 console.log(findLargestProduct(NUMBER_CHAIN))
