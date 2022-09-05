@@ -44,7 +44,7 @@ function translateToMorseCode(text) {
     for (const CHARACTER of text) {
         if (CHARACTER === ' ') {
             morseTranslation += '       '
-            continue 
+            continue
         }
         morseTranslation += MORSE_CODE[CHARACTER] + ' '
     }
