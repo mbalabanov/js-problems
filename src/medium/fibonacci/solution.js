@@ -18,4 +18,4 @@ function createFibonacciSequence(maxNum) {
     return FIBONACCI_SEQUENCE
 }
 
-console.log(createFibonacciSequence(10))
+console.log(createFibonacciSequence(100))
